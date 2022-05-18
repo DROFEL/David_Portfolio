@@ -1,0 +1,105 @@
+:root{
+    --blurMaskRadius: 100px;
+    --mouseX: 0px;
+    --mouseY: 0px;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+
+
+}
+
+html,
+body
+{
+    position: fixed;
+    height: 100vh;
+    font-family: 'Poppins';
+}
+
+h1{
+    color: white;
+}
+
+
+.webgl
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+
+    z-index: 0;
+}
+
+#container {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    flex-direction: column;
+}
+
+#nav{
+    display: flex;
+}
+
+#nav #back{
+    width: 5vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+
+#nav #about {
+
+    width: 8vw;
+    height: 5vh;
+    margin-left: 85vw;
+    margin-top: 2vh;
+}
+
+#main {
+    display: flex;
+    margin: auto;
+
+    width: 25vw;
+
+    justify-content: space-between;
+}
+
+.navButton{
+    width: 5vw;
+    height: 10vh;
+
+    margin: auto;
+}
+
+
+
+#video{
+    display: none;
+}
+
+#maskBlur
+{
+    position: fixed;
+    top: var(--mouseY);
+    left: var(--mouseX);
+
+    height: 15vh;
+    width: 8vw;
+
+    pointer-events: none;
+
+    -webkit-mask-image: radial-gradient(var(--blurMaskRadius) at 50% 50%, rgba(255, 255, 255, 1), rgba(255, 255, 255, .9), rgba(255, 255, 255, 0));
+    mask-image: radial-gradient(100px at 50% 50%, rgba(255, 255, 255, 1), rgba(255, 255, 255, .9), rgba(255, 255, 255, 0));
+
+    backdrop-filter: blur(50px);
+    
+}
